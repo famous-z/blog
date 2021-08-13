@@ -4,13 +4,22 @@ date: 2021-05-25 08:21:35
 tags: CSS
 categories: CSS
 ---
-### 公共代码
+# 实现水平垂直居中
+
+
+> 我们在日常的开发中，经常会遇到这样一个问题，就是如何实现居中水平垂直居中对齐。并且在面试中也会出现这样的问题，但是我们往往回答的不是很全部，而导致没有得到面试加分。接下来我们通过不同的方式来实现，让我们成功破解这道面试
+
+
+## 公共代码
+
+
 - body 如下
 ```body
     <div class="wrap">
         <div class="box"></div>
     </div>
 ```
+
 - style 公共样式
 ```style
     .wrap {
@@ -25,8 +34,13 @@ categories: CSS
         background-color: pink;
     }
 ```
-### 通过定位实现定高定宽的盒子居中
-#### 通过宽度和高度
+
+## 通过定位实现定高定宽的盒子居中
+
+
+### 通过宽度和高度
+
+
 1. 方法一
     - 通过定位方式，设置绝对子元素的 margin-top: -元素高度的一半px
     - style 样式
@@ -43,6 +57,8 @@ categories: CSS
             margin-left: -50px;
         }
     ```
+
+
 2. 方法二
     - 使用 calc() 函数对数值属性执行减法运算
     - css 样式如下
@@ -57,7 +73,10 @@ categories: CSS
             left: calc(50% - 50px);
         }
     ```
-#### 不通过宽度和高度
+
+### 不通过宽度和高度
+
+
 1. 方法一
     - 使用 margin 居中
     - css 样式如下
@@ -75,6 +94,7 @@ categories: CSS
             margin: auto;
         }
     ```
+
 2. 方法二
     - 使用 translate 居中
     - css 样式如下
@@ -90,7 +110,10 @@ categories: CSS
             transform: translate(-50%, -50%);
         }
     ```
-### 通过 flex 布局方式
+
+## 通过 flex 布局方式
+
+
 - css 样式如下
 ```style
     .wrap {

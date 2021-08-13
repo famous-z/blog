@@ -4,11 +4,18 @@ date: 2021-06-01 09:30:41
 tags: Vue
 categories: Vue
 ---
-### 介绍渲染函数（render）
+## 介绍渲染函数（render）
+
+
+> render 在 vue 中也是比较常用的一个方法
+
 - 在 vue 中我们使用模板 HTML 语法组建页面的，使用 render 函数我们可以用 js 语言来构建 DOM。
+
 - 因为 vue 是虚拟 DOM ，所以在拿到 template 模板时也要转译成 VNode 的函数，而用 render 函数构建 DOM ， vue 就免去了转译的过程，也就是如果使用渲染函数 render 时需要将 template 部分删除，因为 render 函数，可以帮我们创建 template。
 - 当使用 render 函数描述虚拟 DOM 时， vue 提供一个函数，这个函数是就构建虚拟 DOM 所需要的工具。官网上给他起了个名字叫 createElement。一般简写为 h。
-### 使用渲染函数（render）
+
+
+## 使用渲染函数（render）
 ```xml
     render(createElement){
         return createElement(
@@ -39,7 +46,9 @@ categories: Vue
         )
     }
 ```
-### 举例渲染函数（render）
+
+
+## 举例渲染函数（render）
 - 为什么使用 render 函数？
 - 什么情况下使用 render 函数？
 - 创建一个等级标题组件 根据不同的 level 创建不同的 标题

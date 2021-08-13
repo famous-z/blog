@@ -4,19 +4,35 @@ date: 2021-05-24 14:51:32
 tags: JavaScript
 categories: JavaScript
 ---
-### 数据的类型
+# 数据的深浅拷贝
+
+> 在 javascript 中有不同的方法来复制对象，如果你还不熟悉这门语言的话，复制对象时就会很容易掉进陷阱里，那么我们怎样才能正确地复制一个对象呢？
+
+
+## 先熟悉一下数据的类型
+
+
 - 数据类型可分为两种：
     - 基本类型：undefined,null,Boolean,String,Number,Symbol
     - 引用类型：Object,Array,Date,Function,RegExp等
+
 - 不同类型的存储方式
     - 基本类型：基本类型值在内存中占据固定大小，保存在内存中，可以说不存在深浅拷贝问题
     - 引用类型：引用类型的值是对象，保存在内存中，而内存存储的是对象的变量标识符以及对象在内存中的存储地址，可以说引用类型给变量的是一个地址，存在深浅拷贝问题
+
 - 引用类型的复制方式
     - 从一个变量向另一个新变量复制引用类型的值，其实复制的是指针，最终两个变量最终都指向同一个对象
-### 认识深拷贝和浅拷贝
+
+## 认识深拷贝和浅拷贝
+
+
 - 浅拷贝：仅仅是复制了引用地址，彼此之间的操作会互相影响
+
 - 深拷贝：重新分配内存，不同的地址，相同的值，互不影响
-### 浅拷贝
+
+## 浅拷贝
+
+
 1. 使用 es6 的展开运算符实现
     ```javaScript
         let obj = { name: '小明', age: 18 }
@@ -27,6 +43,7 @@ categories: JavaScript
         console.log(obj) // 16
         console.log(obj1) // 18
     ```
+
 2. 使用 assign 方法实现浅拷贝
     ```javaScript
         var obj1 = { name: '小明' };
@@ -35,6 +52,7 @@ categories: JavaScript
         console.log(obj1.name); //小明
         console.log(obj2.name); //小张
     ```
+
 3. 使用 slice 方法实现
 ```javaScript
     let arr1 = [
@@ -53,6 +71,7 @@ categories: JavaScript
     console.log(arr1); // ["小明", {age: 20}]
     console.log(arr2); // ["小张", {age: 20}]
 ```
+
 4. 使用 concat 方法
 ```javaScript
     let arr1 = [
@@ -71,9 +90,14 @@ categories: JavaScript
     console.log(arr1); // ["小明", {age: 20}]
     console.log(arr2); // ["小张", {age: 20}]
 ```
+
 - Array的slice和concat方法并不是真正的深拷贝，对于Array的第一层的元素是深拷贝，而Array的第二层 slice和concat方法是复制引用。所以，Array的slice和concat方法都是浅拷贝。
-### 深拷贝
+
+## 深拷贝
+
+
 1. 通过递归实现深拷贝
+
 ```javaScript
     var post = {
         title: "vue 从入门到精通",

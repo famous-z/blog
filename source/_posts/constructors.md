@@ -4,7 +4,14 @@ date: 2021-06-04 08:52:46
 tags: JavaScript
 categories: JavaScript
 ---
-### 什么是构造函数？
+# 构造函数
+
+
+> 面向对象编程(OOP)：具有灵活性，代码可复用性，高度模块化等特点。 1.对象是单个实物的抽象。 2.对象是一个容器，封装了对应属性和方法。 属性是对象的状态，方法是对象的行为。
+
+
+## 什么是构造函数？
+
 - 依然是个函数，函数名首字母必须大写
 - 构造函数内部使用 this 指向创建好的对象内添加属性或方法
 - 必须有 new 不然 this 指向的会变成 windows
@@ -25,7 +32,9 @@ categories: JavaScript
         console.log(cat1.constructor);
     ```
 - 当实例化对象访问或者获取 公共的原型内的方法或者属性的时候  一直会在原型对象内查找  如果原型对象修改了，实例化对象的公共属性和方法也变了(上面的say方法)
-### 构造函数的合并
+## 构造函数的合并
+
+
 - 普通合并，用 assign 将 user 的方法也合并给 systemuser，但不会改变 systemuser 的原型对象
     ```javaScript
         function User(name, age) {
@@ -55,6 +64,7 @@ categories: JavaScript
         systemuser1.sayHi();
         user1.sayHi();//提示错误
     ```
+    
 - 另一种合并
     ```javaScript
         function Animal(type) {
