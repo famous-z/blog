@@ -72,7 +72,7 @@ dream:
 # Whether to display the musics.
 # 是否在首页显示音乐.
 music:
-  enable: false
+  enable: true
   title: #非吸底模式有效
     enable: true
     show: 听听音乐
@@ -235,21 +235,21 @@ myProjects:
 mySkills:
   enable: true
   data:
-    git:
+    React:
       background: 'linear-gradient(to right, #FF0066 0%, #FF00CC 100%)'
-      percent: 60%
-    JavaScript:
+      percent: 85%
+    Vue:
       background: 'linear-gradient(to right, #9900FF 0%, #CC66FF 100%)'
-      percent: 80%
-    HTML5:
+      percent: 85%
+    JavaScript:
       background: 'linear-gradient(to right, #2196F3 0%, #42A5F5 100%)'
-      percent: 80%
+      percent: 90%
     CSS:
       background: 'linear-gradient(to right, #00BCD4 0%, #80DEEA 100%)'
       percent: 85%
-    Vue:
+    git:
       background: 'linear-gradient(to right, #4CAF50 0%, #81C784 100%)'
-      percent: 85%
+      percent: 75%
     jQuery:
       background: 'linear-gradient(to right, #FFEB3B 0%, #FFF176 100%)'
       percent: 80%
@@ -283,7 +283,7 @@ postCalendar: true
 # the Gitalk config，default disabled
 # Gitalk 评论模块的配置，默认为不激活
 gitalk:
-  enable: true
+  enable: false
   owner:
   repo:
   oauth:
