@@ -50,3 +50,60 @@ top: true
 
     export default MyChart
 ```
+
+### 改进方法（将代码分离出来，看起来清晰一些）
+- 可以建立一个 useChart.js
+```js
+    import React, { useEffect } from 'react';
+    var echarts = require('echarts');
+
+    function useChart (chartRef, options) {
+
+        let myChart = null;
+
+        function renderChart() {
+            const chart = echarts.getInstanceByDom(chartRef.current)
+            if (chart) {
+                myChart = chart
+            } else {
+                myChart = echarts.init(chartRef.current)
+            }
+            myChart.setOption(options)
+        };
+
+        useEffect(() => {
+            renderChart()
+        }, [options])
+
+        useEffect(() => {
+            return () => {
+                myChart && myChart.dispose()
+            }
+        }, [])
+
+        return
+    }
+
+    export default useChart
+```
+- 在使用 Echarts 文件中代码如下
+```js
+import  { useRef } from 'react'
+import useChart from './useChart'
+
+function Chart () {
+    const chartRef = useRef(null)
+    const option = {
+            // 表格配置以及数据
+    };
+    useChart (chartRef, option)
+  
+    return (
+      <>
+          <div style={{width: "400px", height: "400px"}} ref={chartRef} />
+      </>
+    )
+  }
+  
+  export default Chart
+```
